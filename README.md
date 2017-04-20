@@ -1,12 +1,11 @@
 # Samsung Galaxy Star
-Device Tree for Samsung Galaxy Star SlimLP 5.1
+Device Tree for Samsung Galaxy Star AOKP LP 5.0.2
 
 ## Note 
-Visit XDA for more information .
-http://forum.xda-developers.com/showthread.php?t=3381239
+This tree is incomplete ,but it should make a booting ROM
 
 ## How to build SlimLP (or any other ROMs) for Samsung Galaxy Star
-* You must first have a Build Environment ready to build android, and a clone of **SlimLP** ready to be built.
+* You must first have a Build Environment ready to build android, and a clone of **AOKP LP** ready to be built.
 * Get the following repos and put them in mentioned path 
 	* Device Tree - This repository. Clone this repository in device/samsung/**mint2g**.
 	* Kernel Source - (https://github.com/TeamButter/android_kernel_samsung_mint). Clone -Cm-12.1- tree in kernel/samsung/**mint2g**.
@@ -19,7 +18,7 @@ http://forum.xda-developers.com/showthread.php?t=3381239
 	* Dual SIM fix - https://github.com/ngoquang2708/android_system_core/commit/97d9f4f83710e4983c80d38097e2cfb19cd50e4c
 	* Bionic patch to suppress 'text relocations' logcat spam (optional) - https://github.com/Agontuk/ste_patches/blob/cm-12.1/bionic/001_avoid_logcat_spam.patch
 	* Fix rotation artifacts (apply only the marked portion of the full patch) - https://gist.github.com/pawitp/88a1d4514a0734c866c7#file-frameworks_native-patch-L78-L102
-* Open terminal in the source folder (of SlimLP) and type -
+* Open terminal in the source folder (of aokp) and type -
   * `source build/envsetup.sh`
   * `brunch mint2g`
   
