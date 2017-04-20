@@ -3,7 +3,8 @@ Device Tree for Samsung Galaxy Star AOKP LP 5.0.2
 
 ## Note 
 * This tree is incomplete ,but it should make a booting ROM
-* To make the device appear in lunch menu you should go to vendor/aokp/vendorsetup.sh
+* To make the device appear in lunch menu you should go to vendor/aokp/vendorsetup.sh and add 
+device lunch combos "add_lunch_combo aokp_mint2g-eng" "add_lunch_combo aokp_mint2g-userdebug"
 * To not get "not found .zip required by bootanimation.zip" error go to vendor/aokp/configs/common.mk 
 and add "TARGET_BOOTANIMATION_NAME :=320" 
 after "$(foreach size,$(bootanimation_sizes), $(call check_and_set_bootanimation,$(size)))"
