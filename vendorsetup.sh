@@ -1,2 +1,2 @@
-add_lunch_combo slim_mint2g-eng
-add_lunch_combo slim_mint2g-userdebug
+add_lunch_combo aokp_mint2g-eng
+add_lunch_combo aokp_mint2g-userdebug

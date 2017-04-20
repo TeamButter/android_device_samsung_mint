@@ -58,11 +58,18 @@ BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_BOOTIMAGE_PARTITION_SIZE := 10485760
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 20485760
 BOARD_CACHEIMAGE_PARTITION_SIZE := 536870912
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 939524096
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 2172649472
 BOARD_FLASH_BLOCK_SIZE := 131072
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
+## original system partition size 
+#BOARD_SYSTEMIMAGE_PARTITION_SIZE := 939524096
+
+## Lehkeda's speakig : I've changed partition system size to fit my new system partition 
+# size as I have repartitioned my device and you shouldn't use this new size 
+# if you're going to use this tree for any thing so you must first use the old 
+# system parition size which is above ^^^
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 912261120
 
 # Recovery
 DEVICE_RESOLUTION := 240x320
@@ -176,38 +183,13 @@ USE_SPRD_HWCOMPOSER := true
 # Media
 BOARD_USE_SAMSUNG_COLORFORMAT := true
 
-#twrp
-#TWRP things are need for SLimKat
-#DEVICE_RESOLUTION := 240x320 #Need custom theme at bootable/recovery/gui/devices/
-#TARGET_RECOVERY_FSTAB := device/samsung/mint2g/recovery/twrp.fstab
-DEVICE_RESOLUTION := 320x320
-RECOVERY_GRAPHICS_USE_LINELENGTH := true
-RECOVERY_SDCARD_ON_DATA := true
-BOARD_HAS_NO_REAL_SDCARD := true
-TW_EXTERNAL_STORAGE_PATH := "/external_sd"
-TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
-TW_INTERNAL_STORAGE_PATH := "/data/media/0"
-TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
-TW_FLASH_FROM_STORAGE := true
-TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
-TW_MAX_BRIGHTNESS := 255
-TWRP_EVENT_LOGGING := false
-## Use prebuilt kernel for recovery only !!!
-#TARGET_PREBUILT_KERNEL := device/samsung/mint2g/kernel
-#PRODUCT_COPY_FILES += device/samsung/mint2g/kernel:kernel
-
 # ART
-#WITH_DEXPREOPT := true
-#WITH_DEXPREOPT_BOOT_IMG_ONLY := true
-#DONT_DEXPREOPT_PREBUILTS := true
+WITH_DEXPREOPT := true
+WITH_DEXPREOPT_BOOT_IMG_ONLY := true
+DONT_DEXPREOPT_PREBUILTS := true
 
 # Include an expanded selection of fonts
-EXTENDED_FONT_FOOTPRINT := true
-USE_MINIKIN := true
+#EXTENDED_FONT_FOOTPRINT := true
+#USE_MINIKIN := true
 
-
-# LZMA compression for recovery's & kernel ramdisk....
-#BOARD_CUSTOM_BOOTIMG_MK := device/samsung/mint2g/custombootimg.mk
-#BOARD_CANT_BUILD_RECOVERY_FROM_BOOT_PATCH := true
-#TARGET_PREBUILT_KERNEL := device/samsung/mint2g/kernel
 
